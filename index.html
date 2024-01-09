@@ -13,7 +13,7 @@
   <body>
 
   <div id="app">
-    <input v-model="todoUser" class="border border-primary" type="text" placeholder="scrivi qui la tua lista">
+    <input @keyup.enter="newTask()" v-model="todoUser" class="border border-primary" type="text" placeholder="scrivi qui la tua lista">
     <button @click="newTask()">
       aggiungi alla lista
     </button>
