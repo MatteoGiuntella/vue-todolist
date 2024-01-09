@@ -47,6 +47,9 @@ const { createApp } = Vue
                 this.todoUser = '';
 
             }
+        },
+        remove(i){
+            this.todolist.splice( i , 1 )
         }
     }
   }).mount('#app')

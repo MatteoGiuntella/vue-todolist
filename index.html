@@ -18,9 +18,12 @@
       aggiungi alla lista
     </button>
     <ul>
-      <li v-for="(elem, i) in todolist">
+      <li v-for="(elem, index) in todolist">
         <span  :class=" elem.done == true ? 'textDone' : '' ">
           {{elem.text}}
+        </span>
+        <span @click="remove(index)">
+          X
         </span>
       </li>
     </ul>
