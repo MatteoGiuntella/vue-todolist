@@ -21,7 +21,7 @@ const { createApp } = Vue
 
             {
                 text : 'spesa', 
-                done : true
+                done : false
             },
 
             {
@@ -50,6 +50,11 @@ const { createApp } = Vue
         },
         remove(i){
             this.todolist.splice( i , 1 )
+        },
+        addClass(i){
+            
+            this.todolist[i].done = !this.todolist[i].done
+
         }
     }
   }).mount('#app')

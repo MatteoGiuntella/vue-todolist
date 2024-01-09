@@ -19,7 +19,7 @@
     </button>
     <ul>
       <li v-for="(elem, index) in todolist">
-        <span  :class=" elem.done == true ? 'textDone' : '' ">
+        <span @click="addClass(index)" :class=" elem.done == true ? 'textDone' : '' ">
           {{elem.text}}
         </span>
         <span @click="remove(index)">
