@@ -1,3 +1,29 @@
+.container
+{
+    background-image: url('img/high-resolution-dark-background-showcasing-a-vintage-wooden-tabletop-texture_9967455.jpg!w700wp');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+/* header */
+
+.container-title
+{
+    background-color: black;
+    color: white;
+    height: 100px;
+
+}
+/* main-input */
+
+
+
+/* main-list */
+.bg-list{
+    background-image:url('/img/46651454-pergamena-su-sfondo-di-legno.jpg');
+}
+
 .textDone{
     text-decoration: line-through;
 }
