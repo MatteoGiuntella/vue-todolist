@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- link -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -21,48 +26,122 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Todo List</title>
   </head>
-  <body>
+  <body  class=" position-relative">
+    <div class="img-fl one position-absolute">
+      <img  src="img/floral-design.png" alt="" />
+    </div>
+    <div class="img-fl two position-absolute">
+      <img  src="img/floral-design.png" alt="" />
+    </div>
+    <div class="img-fl three position-absolute">
+      <img  src="img/floral-design.png" alt="" />
+    </div>
+    <div class="img-fl four position-absolute">
+      <img  src="img/floral-design.png" alt="" />
+    </div>
+    <div  class="img-fl five position-absolute ">
+      <img id="flower-icon" class="petalMove" src="img/petals.png" alt="" />
+    </div>
+    <div class="img-fl six position-absolute">
+      <img id="flower-icon" class="petalMove" src="img/petals.png" alt="" />
+    </div>
+    <div class="img-fl seven position-absolute">
+      <img id="flower-icon" class="petalMove" src="img/petals.png" alt="" />
+    </div>
+    <div class="img-fl eight position-absolute">
+      <img id="flower-icon" class="petalMove" src="img/petals.png" alt="" />
+    </div>
+    <div class="img-fl nine position-absolute">
+      <img id="flower-icon" class="petalMove" src="img/petals.png" alt="" />
+    </div>
+    <div class="img-fl ten position-absolute">
+      <img id="flower-icon" class="petalMove" src="img/petals.png" alt="" />
+    </div>
     <div id="app">
-      <div class="container">
+    
+      <div class="container mt-5">
         <header>
           <div class="row container-title justify-content-center">
             <div
-              class="col-2 d-flex justify-content-center align-items-center rounded-2 m-3"
+              class="col-4 d-flex justify-content-center align-items-center rounded-2 m-3 shadow"
             >
               <h1>Todo List</h1>
             </div>
           </div>
         </header>
         <main>
-          <div class="row flex-column justify-content-center align-items-center">
-            <div class="mt-5 col-6 d-flex justify-content-around">
+          <div class="row flex-column align-items-center mt-5">
+            <div class="col-8 p-2 d-flex justify-content-center w-100">
               <input
-              @keyup.enter="newTask()"
-              v-model="todoUser"
-              class="border border-primary rounded-4 w-50"
-              type="text"
-              placeholder="scrivi qui la tua lista"
-            />
-            <button class="rounded-4 border-0 bg-black text-white" @click="newTask()">aggiungi alla lista</button>
+                @keyup.enter="newTask()"
+                v-model="todoUser"
+                class="border border-primary rounded-4 p-1"
+                type="text"
+                placeholder="Write here your list...."
+              />
             </div>
-            <div class="bg-list mt-5 col-6 d-flex flex-column justify-content-center align-items-center">
-              <ul class="list-unstyled">
-                <li v-for="(elem, index) in todolist">
-                  <span
-                    @click="addClass(index)"
-                    :class=" elem.done == true ? 'textDone' : '' "
-                  >
-                    {{elem.text}}
+            <div class="col-4 d-flex justify-content-center mt-3">
+              <button
+                class="rounded-4 p-2 border-white text-black fw-bold"
+                @click="newTask()"
+              >
+                Add to the list
+              </button>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div
+              class="col-6 d-flex flex-column justify-content-center align-items-center"
+            >
+              <ul class="list-unstyled mt-5 rounded-4 shadow">
+                <li
+                  v-for="(elem, index) in todolist"
+                  class="list-user d-flex justify-content-between align-items-center"
+                >
+                  <span>
+                    <i
+                      @click="addClass(index)"
+                      :class="elem.done ? 'fa-solid fa-heart text-danger' : 'fa-solid fa-heart text-purple'"
+                      style="cursor: pointer; margin-right: 10px"
+                    ></i>
+                    <span :class="elem.done ? 'textDone' : ''">
+                      {{ elem.text }}
+                    </span>
                   </span>
-                  <span class="ms-3" @click="remove(index)"> <i class="fa-regular fa-trash-can" style="color: #f50a0a;"></i></span>
+                  <span class="ms-3" @click="remove(index)">
+                    <i
+                      class="fa-regular fa-trash-can"
+                      style="color: #f50a0a"
+                    ></i>
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
         </main>
+        <footer>
+          <div class="col-6 d-flex justify-content-end align-items-center m-3">
+            <img id="logo" class="shadow" src="img/logo.png" alt="Logo" @click="showModal" />
+          </div>
+        </footer>
       </div>
     </div>
-
+    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <h2 class="modal-title" id="thankYouModalLabel">Thank You!</h2>
+          </div>
+          <div class="modal-body border-0">
+            <p>Thank you for visiting my site! If you would like to collaborate or have any questions, feel free to email me at: <a href="mailto:matteo.giuntella@virgilio.it">matteo.giuntella@virgilio.it</a></p>
+           
+          </div>
+          <div class="modal-footer border-0">
+            <button id="button-modal" type="button" class="btn" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

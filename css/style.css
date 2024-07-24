@@ -1,29 +1,227 @@
-.container
-{
-    background-image: url('img/high-resolution-dark-background-showcasing-a-vintage-wooden-tabletop-texture_9967455.jpg!w700wp');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
+
+html body{
+    background-color: #CD96CD;
+    font-family: 'Dancing Script', cursive;
+    font-size: x-large;
 }
 /* header */
-
-.container-title
-{
-    background-color: black;
-    color: white;
-    height: 100px;
-
+header
+{ 
+     margin-top: 20px;
 }
+.container-title
+{  
+    height: 100px;
+}
+.container-title div
+{
+    background-color: blanchedalmond;
+    height: 80%;
+}
+h1 { 
+   
+    font-weight: 1000; 
+    font-size: 200px; 
+    margin: 20px 0; 
+    text-align: center; 
+    background: linear-gradient(90deg, #c0c0c0, #f5f5f5, #c0c0c0);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8),
+                 0 0 10px rgba(255, 255, 255, 0.5);
+  }
 /* main-input */
-
-
+input
+{
+    width: 40%;
+    text-align: center;
+}
+button
+{
+    background-color:  blanchedalmond;
+}
 
 /* main-list */
-.bg-list{
-    background-image:url('/img/46651454-pergamena-su-sfondo-di-legno.jpg');
-}
 
+ul{
+    background-color:  blanchedalmond;
+    width: 100%;
+    
+}
+.text-purple
+{
+    color: #CD96CD;
+}
 .textDone{
     text-decoration: line-through;
 }
+.list-user
+{
+    padding: 10px;
+    width: 100%;
+    color:  black;
+}
+/* animation */
+.img-fl
+{
+    width: 50px;
+    height: 50px;
+}
+.img-fl img
+{
+    height: 100%;
+}
+.one
+{
+    top: -6%;
+    left: 1%;
+}
+.two
+{
+    top: -6%;
+    right: 1%; 
+}
+.two img
+{
+    transform: rotate(85deg);
+}
+.three
+{
+    bottom: -8%;
+    right: 1%; 
+}
+.three img
+{
+    transform: rotate(175deg);
+}
+.four
+{
+    bottom: -8%;
+    left: 1%; 
+}
+.four img
+{
+    transform: rotate(265deg);
+}
+.five
+{
+    bottom: 0%;
+    left: 21%;  
+}
+.six
+{
+    top: 0%;
+    left: 29%;  
+}
+.seven
+{
+    top: 26%;
+    right: 29%;  
+}
+.eight
+{
+    bottom: 26%;
+    left: 9%;  
+}
+.nine
+{
+    bottom: 30%;
+    right: 9%;  
+}
+.ten
+{
+    top: -40%;
+    right: 9%;  
+}
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centrato verticalmente */
+  }
+  
+  #flower-icon {
+    font-size: 48px; /* Dimensione dell'icona */
+    transition: transform 0.2s ease; /* Transizione per un'animazione fluida */
+  }
+  
+
+  @keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+ 
+  #flower-icon:hover {
+    animation: vibrate 0.5s ease;
+  }
+  .vibrate {
+    animation: vibrate 0.5s ease;
+  }
+/* modal */
+
+  .modal-backdrop {
+    backdrop-filter: blur(5px);
+  }
+  .modal-dialog
+  {
+    border-radius: 10px;
+  }
+  .modal-content {
+    border-radius: 10px;
+    background-color: blanchedalmond;
+  }
+  
+  .modal-header {
+    border-bottom: none;
+    background-color: blanchedalmond;
+  }
+  .modal-body
+  {
+    background-color: blanchedalmond;
+    border-radius: 10px;
+  }
+  .modal-footer {
+    border-top: none;
+    background-color: blanchedalmond !important;
+    color: #CD96CD;
+
+  }
+  .modal-body p a
+  {
+    text-decoration: none;
+    color: #CD96CD;
+  }
+  #thankYouModalLabel
+  {
+    color: #CD96CD;
+  }
+  #button-modal
+  {
+    background-color: #CD96CD;
+    border-radius: 10px;
+    color: blanchedalmond;
+  }
+  #logo {
+    cursor: pointer;
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  #logo:hover {
+    animation: bounce 0.5s ease;
+  }
